@@ -1,2 +1,8 @@
-# Moodle-Global-Widgits-Local
-Moodle Global Widgits Local
+moodle-local_globalwidgets
+==================
+
+Release notes:
+
+version: 2019000000
+
+- Release!
