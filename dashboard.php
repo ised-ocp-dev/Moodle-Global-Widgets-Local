@@ -108,7 +108,7 @@ if($_GET['action'] == ""){
 					<p>
 						<a href="<?php echo $CFG->wwwroot; ?>/local/globalwidgets/dashboard.php?action=edit&id=<?php echo $widget->id; ?>" class="btn btn-primary mr-4">Edit</a>
 						<a class="btn btn-danger" href="<?php echo $CFG->wwwroot; ?>/local/globalwidgets/dashboard.php?action=delete&id=<?php echo $widget->id; ?>">Delete</a>
-						<span style="padding-left:20px;"><?php echo $widget->title; ?></span>
+						<span style="padding-left:20px;"><?php echo format_text($widget->title, FORMAT_HTML, null); ?></span>
 					</p>
 					
 		
@@ -263,7 +263,6 @@ if($_GET['action'] == "edit"){
 				
 				$mform->addElement('hidden','update_form_id','form_id',$_GET['id']);
 				$mform->setDefault('update_form_id', $_GET['id']);
-				
 				
 				$mform->addElement('hidden','update_update_title',$content_data->title, $content_data->title );
 				$mform->setDefault('update_title', $content_data->title);
