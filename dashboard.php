@@ -101,7 +101,7 @@ if($_GET['action'] == ""){
 		
 		<?php
 		
-			$widgets = $DB->get_records_sql('SELECT * FROM {globalwidgets_datacache}', array(1));
+			$widgets = $DB->get_records_sql('SELECT * FROM {globalwidgets_datacache} ORDER BY title ASC', array(1));
 			foreach($widgets as $widget){
 				?>
 
@@ -275,6 +275,8 @@ if($_GET['action'] == "edit"){
 				// TEXT EDITOR
 				$mform->addElement('editor', 'content', get_string('Content', 'local_globalwidgets'));
 				$mform->setType('content', PARAM_HTML);
+				
+				// DEFAULT SELECTION FOR CONTENT MUST BE ADDED *AFTER* DOM
 				$mform->addElement('static', null, '',
                     '<script type="text/javascript">
 				//<![CDATA[

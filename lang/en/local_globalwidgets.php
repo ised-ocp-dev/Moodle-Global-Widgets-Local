@@ -8,7 +8,7 @@
 //
 
 $string['pluginname'] = 'globalwidgets';
-$string['GlobalWidgets'] = 'Global Widgets';
+$string['GlobalWidgets'] = 'Global Content';
 $string['CreateNewGlobalContent'] = "Create New Global Content";
 $string['Edit'] = "Edit";
 $string['Delete'] = "Delete";

@@ -8,7 +8,7 @@
 //
 
 $string['pluginname'] = 'globalwidgets';
-$string['GlobalWidgets'] = 'Widgets globaux';
+$string['GlobalWidgets'] = 'Contenu global';
 $string['CreateNewGlobalContent'] = "Créer un nouveau contenu global";
 $string['Edit'] = "Modifier";
 $string['Delete'] = "Supprimer";
@@ -20,7 +20,6 @@ $string['Title'] = "Titre";
 $string['Content'] = "Teneur";
 $string['Save'] = "Sauver";
 $string['Cancel'] = "Annuler";
-
 
 $string['ConfirmDeletion'] = "Confirmer la suppression";
 $string['ContentDeleted'] = "Contenu supprimé";
