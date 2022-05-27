@@ -1,24 +1,30 @@
 <?php
-// This file is part of the Local Analytics plugin for Moodle
 //
-// Moodle is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
 //
-// Moodle is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
 //
-// You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-
-/**
- * @package local_globalwidgets
- * @author Andrew Normore<anormore@yorkvilleu.ca>
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- * @copyright (C) 2019 onwards Yorkville Education Company
- */
+// ENGLISH
+// get_string('NAME_OF_STRING', 'local_globalwidgets')
+//
+//
 
 $string['pluginname'] = 'globalwidgets';
+$string['GlobalWidgets'] = 'Global Widgets';
+$string['CreateNewGlobalContent'] = "Create New Global Content";
+$string['Edit'] = "Edit";
+$string['Delete'] = "Delete";
+
+
+$string['CreateNewGlobalWidgets'] = "Create New Global Widgets";
+$string['Title'] = "Title";
+$string['Content'] = "Content";
+$string['Save'] = "Save";
+$string['Cancel'] = "Cancel";
+
+$string['ConfirmDeletion'] = "Confirm Deletion";
+$string['ContentDeleted'] = "Content Deleted";
+$string['ReturnToGlobalWidgetsEditor'] = "Return to Global Widgets Editor";
+
+$string['EditingNewGlobalWidgets'] = "Editing New Global Widgets";
+$string['ContentUpdated'] = "Content Updated";
+
+

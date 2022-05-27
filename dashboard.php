@@ -44,7 +44,7 @@ if($_POST['submitbutton'] == "Save"){
 		?>
 
 			<div class="alert alert-success" role="alert">
-				Content Saved!
+				<?php echo get_string('ContentUpdated', 'local_globalwidgets'); ?>
 			</div>
 		
 		<?php
@@ -79,7 +79,7 @@ if($_POST['update_form_id'] != "" && $_POST['cancelbutton'] != "Cancel"){
 	?>
 
 		<div class="alert alert-success" role="alert">
-			Content Updated!
+			<?php echo get_string('ContentUpdated', 'local_globalwidgets'); ?>
 		</div>
 	
 	<?php
@@ -92,10 +92,10 @@ if($_POST['update_form_id'] != "" && $_POST['cancelbutton'] != "Cancel"){
 if($_GET['action'] == ""){
 	?>
 
-		<h1>Global Widgets</h1>
+		<h1><?php echo get_string('GlobalWidgets', 'local_globalwidgets'); ?></h1>
 		<hr />
 		
-		<a class="btn btn-success" href="<?php echo $CFG->wwwroot; ?>/local/globalwidgets/dashboard.php?action=new">Create New Global Content</a>
+		<a class="btn btn-success" href="<?php echo $CFG->wwwroot; ?>/local/globalwidgets/dashboard.php?action=new"><?php echo get_string('CreateNewGlobalContent', 'local_globalwidgets'); ?></a>
 		
 		<hr />
 		
@@ -106,8 +106,8 @@ if($_GET['action'] == ""){
 				?>
 
 					<p>
-						<a href="<?php echo $CFG->wwwroot; ?>/local/globalwidgets/dashboard.php?action=edit&id=<?php echo $widget->id; ?>" class="btn btn-primary mr-4">Edit</a>
-						<a class="btn btn-danger" href="<?php echo $CFG->wwwroot; ?>/local/globalwidgets/dashboard.php?action=delete&id=<?php echo $widget->id; ?>">Delete</a>
+						<a href="<?php echo $CFG->wwwroot; ?>/local/globalwidgets/dashboard.php?action=edit&id=<?php echo $widget->id; ?>" class="btn btn-primary mr-4"><?php echo get_string('Edit', 'local_globalwidgets'); ?></a>
+						<a class="btn btn-danger" href="<?php echo $CFG->wwwroot; ?>/local/globalwidgets/dashboard.php?action=delete&id=<?php echo $widget->id; ?>"><?php echo get_string('Delete', 'local_globalwidgets'); ?></a>
 						<span style="padding-left:20px;"><?php echo format_text($widget->title, FORMAT_HTML, null); ?></span>
 					</p>
 					
@@ -132,10 +132,10 @@ if($_GET['action'] == "delete"){
 	
 	?>
 
-		<h1>Confirm Deletion: <?php echo $content_data->title; ?></h1>
+		<h1><?php echo get_string('ConfirmDeletion', 'local_globalwidgets'); ?>: <?php echo $content_data->title; ?></h1>
 		<hr />
 		
-		<a class="btn btn-danger" href="<?php echo $CFG->wwwroot; ?>/local/globalwidgets/dashboard.php?action=confirm_delete&id=<?php echo $_GET['id']; ?>">Delete</a>
+		<a class="btn btn-danger" href="<?php echo $CFG->wwwroot; ?>/local/globalwidgets/dashboard.php?action=confirm_delete&id=<?php echo $_GET['id']; ?>"><?php echo get_string('Delete', 'local_globalwidgets'); ?></a>
 		
 	<?php
 }
@@ -148,9 +148,9 @@ if($_GET['action'] == "confirm_delete"){
 	?>
 		
 		<div class="alert alert-danger" role="alert">
-			Content Deleted
+			<?php echo get_string('ContentDeleted', 'local_globalwidgets'); ?>
 		</div>
-		<a class="btn btn-primary" href="<?php echo $CFG->wwwroot; ?>/local/globalwidgets/dashboard.php">Return to Global Widgets Editor</a>
+		<a class="btn btn-primary" href="<?php echo $CFG->wwwroot; ?>/local/globalwidgets/dashboard.php"><?php echo get_string('ReturnToGlobalWidgetsEditor', 'local_globalwidgets'); ?></a>
 		
 	<?php
 }
@@ -164,7 +164,7 @@ if($_GET['action'] == "confirm_delete"){
 if($_GET['action'] == "new"){
 	?>
 
-		<h1>Create New Global Widgets</h1>
+		<h1><?php echo get_string('CreateNewGlobalWidgets', 'local_globalwidgets'); ?></h1>
 		<hr />
 		
 		<?php
@@ -181,19 +181,19 @@ if($_GET['action'] == "new"){
 				$mform = $this->_form; // Don't forget the underscore! 
 
 				// TITLE
-				$mform->addElement('text', 'title', 'Title'); // Add elements to your form.
+				$mform->addElement('text', 'title', get_string('Title', 'local_globalwidgets')); // Add elements to your form.
 				$mform->setType('text', PARAM_NOTAGS);                   // Set type of element.
-				$mform->setDefault('text', 'Content Block Title');        // Default value.
+				$mform->setDefault('text', 'Default Content Block Title');        // Default value.
 				
 				// TEXT EDITOR
-				$mform->addElement('editor', 'content', 'Content');
+				$mform->addElement('editor', 'content', get_string('Content', 'local_globalwidgets'));
 				$mform->setType('content', PARAM_RAW);
 				
 				
 				$buttonarray=array();
-				$buttonarray[] = $mform->createElement('submit', 'submitbutton', 'Save');
+				$buttonarray[] = $mform->createElement('submit', 'submitbutton', get_string('Save', 'local_globalwidgets'));
 				//$buttonarray[] = $mform->createElement('reset', 'resetbutton', get_string('revert'));
-				$buttonarray[] = $mform->createElement('cancel', 'cancelbutton', 'Cancel');
+				$buttonarray[] = $mform->createElement('cancel', 'cancelbutton', get_string('Cancel', 'local_globalwidgets'));
 				
 				$mform->addGroup($buttonarray, 'buttonar', '', ' ', false);
 			 
@@ -236,7 +236,7 @@ if($_GET['action'] == "new"){
 if($_GET['action'] == "edit"){
 	?>
 
-		<h1>Editing New Global Widgets</h1>
+		<h1><?php echo get_string('EditingNewGlobalWidgets', 'local_globalwidgets'); ?></h1>
 		<hr />
 		
 		<?php
@@ -268,12 +268,12 @@ if($_GET['action'] == "edit"){
 				$mform->setDefault('update_title', $content_data->title);
 
 				// TITLE
-				$mform->addElement('text', 'title', 'Title'); // Add elements to your form.
+				$mform->addElement('text', 'title', get_string('Title', 'local_globalwidgets')); // Add elements to your form.
 				$mform->setType('text', PARAM_NOTAGS);                   // Set type of element.
 				$mform->setDefault('title', $content_data->title);
 				
 				// TEXT EDITOR
-				$mform->addElement('editor', 'content', 'Content');
+				$mform->addElement('editor', 'content', get_string('Content', 'local_globalwidgets'));
 				$mform->setType('content', PARAM_HTML);
 				$mform->addElement('static', null, '',
                     '<script type="text/javascript">
@@ -288,9 +288,9 @@ if($_GET['action'] == "edit"){
 
 				
 				$buttonarray=array();
-				$buttonarray[] = $mform->createElement('submit', 'submitbutton', 'Save');
+				$buttonarray[] = $mform->createElement('submit', 'submitbutton', get_string('Save', 'local_globalwidgets'));
 				//$buttonarray[] = $mform->createElement('reset', 'resetbutton', get_string('revert'));
-				$buttonarray[] = $mform->createElement('cancel', 'cancelbutton', 'Cancel');
+				$buttonarray[] = $mform->createElement('cancel', 'cancelbutton', get_string('Cancel', 'local_globalwidgets'));
 				
 				$mform->addGroup($buttonarray, 'buttonar', '', ' ', false);
 			 
