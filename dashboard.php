@@ -9,7 +9,7 @@ global $DB;
 // Security.
 $context = context_system::instance();
 require_login();
-require_capability('moodle/site:config', $context);
+
 
 // Page boilerplate stuff.
 $url = new moodle_url('/local/globalwidgets/dashboard.php');
